@@ -91,6 +91,10 @@ const App: React.FC = () => {
     setAuthMode('login');
   };
 
+  const handleBackToLanding = () => {
+    setAuthMode('guest');
+  };
+
   const handleAdminLoginSuccess = () => {
     setAuthMode('admin');
     setActivePage('Main Menu');
@@ -327,7 +331,7 @@ const App: React.FC = () => {
   }
 
   if (authMode === 'login') {
-    return <LoginPage onLoginSuccess={handleAdminLoginSuccess} />;
+    return <LoginPage onLoginSuccess={handleAdminLoginSuccess} onBack={handleBackToLanding} />;
   }
 
   // Viewer Mode
